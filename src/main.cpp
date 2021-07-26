@@ -34,7 +34,7 @@ int main(int argc, const char* argv[])
 	// Reduce Order      : timestamp R order-id size
 	// Pricer response   : timestamp action total
 
-	while(getline(cin,line) && !line.empty())
+	while(getline(std::cin,line) && !line.empty())
 	{
 		try
 		{

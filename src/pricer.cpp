@@ -10,7 +10,7 @@ bool compare_double(long double x, long double y, long double epsilon = 0.000000
 
 pricer::pricer(unsigned long target_size): target_size_(target_size)
 {
-	thread_ = thread{ &pricer::processOrder, this };
+	thread_ = std::thread{ &pricer::processOrder, this };
 }
 
 pricer::~pricer()
@@ -276,7 +276,7 @@ void pricer::analyseBuy()
 
 namespace marketdata 
 {
-	ostream& operator<<(ostream& os, const pricer& mypricer)
+	std::ostream& operator<<(std::ostream& os, const pricer& mypricer)
 	{
 		using namespace marketdata;
 		os  << "print limit book:"<<std::endl;

@@ -14,7 +14,6 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
-using namespace std;
 
 namespace marketdata {
 
@@ -65,7 +64,7 @@ namespace marketdata {
 			virtual void pushOrder(const order_t& newOrder);
 			virtual ~pricer();
 
-			friend ostream& operator<<(ostream& os, const pricer& mypricer);
+			friend std::ostream& operator<<(std::ostream& os, const pricer& mypricer);
 
 		protected:
 			virtual void processOrder();
